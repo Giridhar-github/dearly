@@ -5,16 +5,16 @@
                 <img class="h-20 w-auto" src="<?= BASE_URL . 'assets/images/logo_white.png' ?>" alt="" srcset="">
             </div>
             <p class="text-justify text-wrap px-7">We turn memories, dreams and passions into personalized diaries that inspire every day.</p>
-            <div class="flex justify-center">
-                <a class="border-white rounded-full p-4" href="">
+            <div class="flex justify-center gap-x-3">
+                <a class="border-1 border-white rounded-full p-2" href="">
                     <img class="h-5 invert w-auto" src="<?= BASE_URL . 'assets/images/icons/insta.svg' ?>" alt="" srcset="">
                 </a>
 
-                <a class="border-white rounded-full p-4" href="">
+                <a class="border-1 border-white rounded-full p-2" href="">
                     <img class="h-5 invert w-auto" src="<?= BASE_URL . 'assets/images/icons/pinterest.svg' ?>" alt="" srcset="">
                 </a>
 
-                <a class="border-white rounded-full p-4" href="">
+                <a class="border-1 border-white rounded-full p-2" href="">
                     <img class="h-5 invert w-auto" src="<?= BASE_URL . 'assets/images/icons/fb.svg' ?>" alt="" srcset="">
                 </a>
             </div>
@@ -49,7 +49,7 @@
             </div>
         </div>
     </div>
-    <div class="text-center text-white">
+    <div class="text-center text-white border-t-1 mt-3 border-gray-500 py-2">
         <p class="text-[10px]">
             &copy; <?= date('Y') ?>
             <?= htmlspecialchars(APP_NAME) ?>.

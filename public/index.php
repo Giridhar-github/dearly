@@ -6,6 +6,7 @@ require_once __DIR__ . '/../src/views/components/header.php';
 require_once __DIR__ . '/../src/views/components/navbar.php';
 ?>
 <main class="">
+    <!-- hero section -->
     <div class="">
         <div class="h-full bg-cover py-10" style="background-image: url(<?= BASE_URL . 'assets/images/hero.webp' ?>);">
             <div class="mx-20">
@@ -42,8 +43,8 @@ require_once __DIR__ . '/../src/views/components/navbar.php';
                         </div>
                     </div>
                 </div>
-                <div class="mt-10 flex justify-center">
-                    <div class="bg-white px-5 py-3 shadow-2xl flex justify-center rounded-3xl">
+                <div class="mt-10 w-40 md:w-full flex justify-center w-full flex-wrap">
+                    <div class=" bg-white px-5 py-3 shadow-2xl flex justify-center rounded-3xl">
                         <div class="flex justify-center items-start">
                             <div class="flex flex-col gap-y-1 min-w-48 w-60 items-center justify-start p-5 ">
                                 <div class="bg-red-200 w-16 p-5 rounded-full">
@@ -102,6 +103,7 @@ require_once __DIR__ . '/../src/views/components/navbar.php';
             </div>
         </div>
     </div>
+    <!-- collections -->
     <div class="my-12">
         <div class="flex flex-col items-center gap-y-4 mb-4">
             <h2 class="text-4xl">DIARIES FOR EVERY STORIES</h2>
@@ -110,7 +112,7 @@ require_once __DIR__ . '/../src/views/components/navbar.php';
         <div class="mx-5 flex gap-x-8 justify-center">
             <div class="w-48 flex flex-col shadow-sm bg-background">
                 <div class="flex-3/4">
-                    <img class="w-full h-full object-cover" src="<?= BASE_URL . 'assets/images/collections/travel_lover.png' ?>" alt="">
+                    <img class="w-full h-full object-cover" src="<?= BASE_URL . 'assets/images/collections/travel_lover.webp' ?>" alt="">
                 </div>
                 <div class="flex-1/4 px-1 flex flex-col items-center gap-y-3 py-5">
                     <p class="font-bold">Travel Lover</p>
@@ -123,11 +125,11 @@ require_once __DIR__ . '/../src/views/components/navbar.php';
             </div>
             <div class="w-48 flex flex-col shadow-sm bg-background">
                 <div class="flex-3/4">
-                    <img class="w-full h-full object-cover" src="<?= BASE_URL . 'assets/images/collections/travel_lover.png' ?>" alt="">
+                    <img class="w-full h-full object-cover" src="<?= BASE_URL . 'assets/images/collections/couple_diary.webp' ?>" alt="">
                 </div>
                 <div class="flex-1/4 px-1 flex flex-col items-center gap-y-3 py-5">
-                    <p class="font-bold">Travel Lover</p>
-                    <p class="text-wrap font-semibold text-[12px] text-center tracking-wider">For those who collect memories, not things.</p>
+                    <p class="font-bold">Couple Diary</p>
+                    <p class="text-wrap font-semibold text-[12px] text-center tracking-wider">Your love story deserves its own pages.</p>
                     <a class="flex items-center gap-x-2 text-button_color" href="">Explore <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-move-right-icon lucide-move-right">
                             <path d="M18 8L22 12L18 16" />
                             <path d="M2 12H22" />
@@ -136,11 +138,11 @@ require_once __DIR__ . '/../src/views/components/navbar.php';
             </div>
             <div class="w-48 flex flex-col shadow-sm bg-background">
                 <div class="flex-3/4">
-                    <img class="w-full h-full object-cover" src="<?= BASE_URL . 'assets/images/collections/travel_lover.png' ?>" alt="">
+                    <img class="w-full h-full object-cover" src="<?= BASE_URL . 'assets/images/collections/student_planner.webp' ?>" alt="">
                 </div>
                 <div class="flex-1/4 px-1 flex flex-col items-center gap-y-3 py-5">
-                    <p class="font-bold">Travel Lover</p>
-                    <p class="text-wrap font-semibold text-[12px] text-center tracking-wider">For those who collect memories, not things.</p>
+                    <p class="font-bold">Student Planner</p>
+                    <p class="text-wrap font-semibold text-[12px] text-center tracking-wider">Plan better, achieve more, build your future.</p>
                     <a class="flex items-center gap-x-2 text-button_color" href="">Explore <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-move-right-icon lucide-move-right">
                             <path d="M18 8L22 12L18 16" />
                             <path d="M2 12H22" />
@@ -149,11 +151,11 @@ require_once __DIR__ . '/../src/views/components/navbar.php';
             </div>
             <div class="w-48 flex flex-col shadow-sm bg-background">
                 <div class="flex-3/4">
-                    <img class="w-full h-full object-cover" src="<?= BASE_URL . 'assets/images/collections/travel_lover.png' ?>" alt="">
+                    <img class="w-full h-full object-cover" src="<?= BASE_URL . 'assets/images/collections/fitness_diary.webp' ?>" alt="">
                 </div>
                 <div class="flex-1/4 px-1 flex flex-col items-center gap-y-3 py-5">
-                    <p class="font-bold">Travel Lover</p>
-                    <p class="text-wrap font-semibold text-[12px] text-center tracking-wider">For those who collect memories, not things.</p>
+                    <p class="font-bold">Fitness Journey</p>
+                    <p class="text-wrap font-semibold text-[12px] text-center tracking-wider">Track your progress. Celebrate your strength.</p>
                     <a class="flex items-center gap-x-2 text-button_color" href="">Explore <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-move-right-icon lucide-move-right">
                             <path d="M18 8L22 12L18 16" />
                             <path d="M2 12H22" />
@@ -162,11 +164,11 @@ require_once __DIR__ . '/../src/views/components/navbar.php';
             </div>
             <div class="w-48 flex flex-col shadow-sm bg-background">
                 <div class="flex-3/4">
-                    <img class="w-full h-full object-cover" src="<?= BASE_URL . 'assets/images/collections/travel_lover.png' ?>" alt="">
+                    <img class="w-full h-full object-cover" src="<?= BASE_URL . 'assets/images/collections/pet_lover.webp' ?>" alt="">
                 </div>
                 <div class="flex-1/4 px-1 flex flex-col items-center gap-y-3 py-5">
-                    <p class="font-bold">Travel Lover</p>
-                    <p class="text-wrap font-semibold text-[12px] text-center tracking-wider">For those who collect memories, not things.</p>
+                    <p class="font-bold">Pet Lover</p>
+                    <p class="text-wrap font-semibold text-[12px] text-center tracking-wider">For the ones who leave paw prints on our hearts.</p>
                     <a class="flex items-center gap-x-2 text-button_color" href="">Explore <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-move-right-icon lucide-move-right">
                             <path d="M18 8L22 12L18 16" />
                             <path d="M2 12H22" />
@@ -175,11 +177,11 @@ require_once __DIR__ . '/../src/views/components/navbar.php';
             </div>
             <div class="w-48 flex flex-col shadow-sm bg-background">
                 <div class="flex-3/4">
-                    <img class="w-full h-full object-cover" src="<?= BASE_URL . 'assets/images/collections/travel_lover.png' ?>" alt="">
+                    <img class="w-full h-full object-cover" src="<?= BASE_URL . 'assets/images/collections/professional_diary.webp' ?>" alt="">
                 </div>
                 <div class="flex-1/4 px-1 flex flex-col items-center gap-y-3 py-5">
-                    <p class="font-bold">Travel Lover</p>
-                    <p class="text-wrap font-semibold text-[12px] text-center tracking-wider">For those who collect memories, not things.</p>
+                    <p class="font-bold">Professional</p>
+                    <p class="text-wrap font-semibold text-[12px] text-center tracking-wider">Stay productive, set goals, achieve more.</p>
                     <a class="flex items-center gap-x-2 text-button_color" href="">Explore <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-move-right-icon lucide-move-right">
                             <path d="M18 8L22 12L18 16" />
                             <path d="M2 12H22" />
