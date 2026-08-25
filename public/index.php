@@ -9,7 +9,7 @@ require_once __DIR__ . '/../src/views/components/navbar.php';
     <!-- hero section -->
     <div class="">
         <div class="h-full bg-cover py-10" style="background-image: url(<?= BASE_URL . 'assets/images/hero.webp' ?>);">
-            <div class="mx-20">
+            <div class="mx-5 md:mx-20">
                 <div class="flex flex-col gap-y-5">
                     <h2 class="tracking-wider text-6xl font-[Brush_Script_MT] font-extralight">We design.</h2>
                     <h1 class="text-6xl tracking-tight font-normal font-bold font-serif">You live your <br>precious moments</h1>
@@ -20,15 +20,15 @@ require_once __DIR__ . '/../src/views/components/navbar.php';
                                 <path d="M2 12H22" />
                             </svg></button>
                     </div>
-                    <div class="flex gap-x-5 mt-5 mb-10">
-                        <div class="flex items-center gap-x-2 border-r-2 pe-5 border-gray-400">
+                    <div class="flex flex-col md:flex-row gap-x-5 gap-y-3 mt-5 mb-10">
+                        <div class="flex items-center gap-x-2 md:border-r-2 pe-5 md:border-gray-400">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="rgb(129 47 61)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user-round-icon lucide-user-round">
                                 <circle cx="12" cy="8" r="5" />
                                 <path d="M20 21a8 8 0 0 0-16 0" />
                             </svg>
                             <p class="text-sm text-gray-500 tracking-widest">100% personalised</p>
                         </div>
-                        <div class="flex items-center gap-x-2 border-r-2 pe-5 border-gray-400">
+                        <div class="flex items-center gap-x-2 md:border-r-2 pe-5 md:border-gray-400">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="rgb(129 47 61)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield-check-icon lucide-shield-check">
                                 <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" />
                                 <path d="m9 12 2 2 4-4" />
@@ -43,9 +43,9 @@ require_once __DIR__ . '/../src/views/components/navbar.php';
                         </div>
                     </div>
                 </div>
-                <div class="mt-10 w-40 md:w-full flex justify-center w-full flex-wrap">
-                    <div class=" bg-white px-5 py-3 shadow-2xl flex justify-center rounded-3xl">
-                        <div class="flex justify-center items-start">
+                <div class="mt-10 flex justify-center">
+                    <div class="bg-white px-5 py-3 shadow-2xl flex justify-center rounded-3xl">
+                        <div class="flex flex-col md:flex-row justify-center items-start">
                             <div class="flex flex-col gap-y-1 min-w-48 w-60 items-center justify-start p-5 ">
                                 <div class="bg-red-200 w-16 p-5 rounded-full">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="rgb(129 47 61)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-pencil-sparkles-icon lucide-pencil-sparkles">
@@ -106,10 +106,10 @@ require_once __DIR__ . '/../src/views/components/navbar.php';
     <!-- collections -->
     <div class="my-12">
         <div class="flex flex-col items-center gap-y-4 mb-4">
-            <h2 class="text-4xl">DIARIES FOR EVERY STORIES</h2>
+            <h2 class="text-2xl md:text-4xl">DIARIES FOR EVERY STORIES</h2>
             <img src="<?= BASE_URL . 'assets/images/underline.png' ?>" alt="" srcset="" class="h-5">
         </div>
-        <div class="mx-5 flex gap-x-8 justify-center">
+        <div class="mx-5 flex gap-x-8 gap-y-2 justify-center flex-wrap">
             <div class="w-48 flex flex-col shadow-sm bg-background">
                 <div class="flex-3/4">
                     <img class="w-full h-full object-cover" src="<?= BASE_URL . 'assets/images/collections/travel_lover.webp' ?>" alt="">
