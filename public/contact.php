@@ -1,0 +1,179 @@
+<?php
+
+require_once __DIR__ . '/../src/config/config.php';
+$page_title = 'Contact Us';
+require_once __DIR__ . '/../src/views/components/header.php';
+require_once __DIR__ . '/../src/views/components/navbar.php';
+?>
+<main class="">
+
+    <!-- Page heading -->
+    <div class="my-12 flex flex-col items-center gap-y-4">
+        <h2 class="text-2xl md:text-4xl">GET IN TOUCH</h2>
+        <img src="<?= BASE_URL . 'assets/images/underline.png' ?>" alt="" class="h-5">
+        <p class="text-center text-gray-500 max-w-md px-5">
+            Have a question about a custom diary or planner? We'd love to hear your story.
+        </p>
+    </div>
+
+    <!-- Contact section -->
+    <!-- Contact section -->
+    <div class="mx-5 md:mx-20 mb-20">
+        <div class="grid grid-cols-1 md:grid-cols-2 shadow-2xl rounded-[2rem] overflow-hidden">
+
+            <!-- Left: contact info -->
+            <div class="relative bg-gradient-to-br from-primary to-[#4a3226] text-white p-10 md:p-12 flex flex-col gap-y-8 justify-center overflow-hidden">
+
+                <!-- decorative background pattern -->
+                <svg class="absolute -top-10 -right-10 opacity-10" width="220" height="220" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1">
+                    <path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5" />
+                </svg>
+                <svg class="absolute -bottom-14 -left-10 opacity-5" width="260" height="260" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1">
+                    <circle cx="12" cy="12" r="10" />
+                </svg>
+
+                <div class="relative">
+                    <p class="uppercase tracking-[0.3em] text-[11px] text-light_accent mb-3">Let's Talk</p>
+                    <h3 class="text-3xl md:text-4xl font-serif mb-3">Contact Information</h3>
+                    <div class="h-[3px] w-14 bg-accent rounded-full mb-4"></div>
+                    <p class="text-sm text-gray-200 tracking-wide leading-relaxed max-w-xs">
+                        Fill out the form and our team will get back to you within 24 hours.
+                    </p>
+                </div>
+
+                <div class="relative flex flex-col gap-y-5">
+                    <a href="mailto:dearly@gmail.com" class="flex items-center gap-x-4 group">
+                        <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-white/10 border border-white/20 backdrop-blur-sm group-hover:bg-accent group-hover:border-accent transition-colors duration-200">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7" />
+                                <rect x="2" y="4" width="20" height="16" rx="2" />
+                            </svg>
+                        </span>
+                        <p class="text-sm tracking-wide"><?= EMAIL ?></p>
+                    </a>
+
+                    <a href="tel:+9111545445454" class="flex items-center gap-x-4 group">
+                        <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-white/10 border border-white/20 backdrop-blur-sm group-hover:bg-accent group-hover:border-accent transition-colors duration-200">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M13 2a9 9 0 0 1 9 9" />
+                                <path d="M13 6a5 5 0 0 1 5 5" />
+                                <path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384" />
+                            </svg>
+                        </span>
+                        <p class="text-sm tracking-wide"><?= PHONE ?></p>
+                    </a>
+
+                    <div class="flex items-center gap-x-4">
+                        <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-white/10 border border-white/20 backdrop-blur-sm">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" />
+                                <circle cx="12" cy="10" r="3" />
+                            </svg>
+                        </span>
+                        <p class="text-sm tracking-wide"><?= ADDRESS ?></p>
+                    </div>
+                </div>
+
+                <div class="relative flex gap-x-3 mt-2">
+                    <a class="flex h-10 w-10 items-center justify-center border border-white/40 rounded-full hover:bg-accent hover:border-accent transition-colors duration-200" href="">
+                        <img class="h-4 invert w-auto" src="<?= BASE_URL . 'assets/images/icons/insta.svg' ?>" alt="">
+                    </a>
+                    <a class="flex h-10 w-10 items-center justify-center border border-white/40 rounded-full hover:bg-accent hover:border-accent transition-colors duration-200" href="">
+                        <img class="h-4 invert w-auto" src="<?= BASE_URL . 'assets/images/icons/pinterest.svg' ?>" alt="">
+                    </a>
+                    <a class="flex h-10 w-10 items-center justify-center border border-white/40 rounded-full hover:bg-accent hover:border-accent transition-colors duration-200" href="">
+                        <img class="h-4 invert w-auto" src="<?= BASE_URL . 'assets/images/icons/fb.svg' ?>" alt="">
+                    </a>
+                </div>
+            </div>
+
+            <!-- Right: contact form -->
+            <div class="bg-white p-10 md:p-12 flex flex-col justify-center">
+
+                <?php if (!empty($form_success ?? null)): ?>
+                    <div class="mb-5 rounded-xl bg-green-50 border border-green-200 text-green-700 px-4 py-3 text-sm">
+                        Thanks! Your message has been sent — we'll be in touch soon.
+                    </div>
+                <?php endif; ?>
+
+                <?php if (!empty($form_errors ?? [])): ?>
+                    <div class="mb-5 rounded-xl bg-red-50 border border-red-200 text-red-700 px-4 py-3 text-sm">
+                        <ul class="list-disc list-inside">
+                            <?php foreach ($form_errors as $error): ?>
+                                <li><?= htmlspecialchars($error) ?></li>
+                            <?php endforeach; ?>
+                        </ul>
+                    </div>
+                <?php endif; ?>
+
+                <form method="POST" action="<?= BASE_URL . 'contact' ?>" class="flex flex-col gap-y-5">
+
+                    <div class="flex flex-col md:flex-row gap-5">
+                        <div class="flex-1 flex flex-col gap-y-1.5">
+                            <label for="name" class="text-sm text-dark_text font-semibold tracking-wide">Name</label>
+                            <input
+                                type="text"
+                                id="name"
+                                name="name"
+                                required
+                                placeholder="Your full name"
+                                value="<?= htmlspecialchars($old['name'] ?? '') ?>"
+                                class="bg-secondary/50 border border-transparent rounded-xl px-4 py-3 text-sm placeholder:text-gray-400 focus:outline-none focus:bg-white focus:border-accent focus:ring-4 focus:ring-accent/15 transition-all duration-200">
+                        </div>
+
+                        <div class="flex-1 flex flex-col gap-y-1.5">
+                            <label for="email" class="text-sm text-dark_text font-semibold tracking-wide">Email</label>
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                required
+                                placeholder="you@example.com"
+                                value="<?= htmlspecialchars($old['email'] ?? '') ?>"
+                                class="bg-secondary/50 border border-transparent rounded-xl px-4 py-3 text-sm placeholder:text-gray-400 focus:outline-none focus:bg-white focus:border-accent focus:ring-4 focus:ring-accent/15 transition-all duration-200">
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col gap-y-1.5">
+                        <label for="subject" class="text-sm text-dark_text font-semibold tracking-wide">Subject</label>
+                        <input
+                            type="text"
+                            id="subject"
+                            name="subject"
+                            required
+                            placeholder="What's this about?"
+                            value="<?= htmlspecialchars($old['subject'] ?? '') ?>"
+                            class="bg-secondary/50 border border-transparent rounded-xl px-4 py-3 text-sm placeholder:text-gray-400 focus:outline-none focus:bg-white focus:border-accent focus:ring-4 focus:ring-accent/15 transition-all duration-200">
+                    </div>
+
+                    <div class="flex flex-col gap-y-1.5">
+                        <label for="message" class="text-sm text-dark_text font-semibold tracking-wide">Message</label>
+                        <textarea
+                            id="message"
+                            name="message"
+                            rows="5"
+                            required
+                            placeholder="Tell us about the story you'd like to capture..."
+                            class="bg-secondary/50 border border-transparent rounded-xl px-4 py-3 text-sm placeholder:text-gray-400 resize-none focus:outline-none focus:bg-white focus:border-accent focus:ring-4 focus:ring-accent/15 transition-all duration-200"><?= htmlspecialchars($old['message'] ?? '') ?></textarea>
+                    </div>
+
+                    <button
+                        type="submit"
+                        class="mt-2 bg-button_color hover:brightness-110 text-white flex items-center justify-center gap-3 px-6 py-3.5 rounded-xl w-max shadow-lg shadow-button_color/30 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200">
+                        Send Message
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M18 8L22 12L18 16" />
+                            <path d="M2 12H22" />
+                        </svg>
+                    </button>
+
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+</main>
+<?php
+require_once __DIR__ . '/../src/views/components/footer.php';
+?>

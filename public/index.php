@@ -104,90 +104,123 @@ require_once __DIR__ . '/../src/views/components/navbar.php';
         </div>
     </div>
     <!-- collections -->
-    <div class="my-12">
-        <div class="flex flex-col items-center gap-y-4 mb-4">
-            <h2 class="text-2xl md:text-4xl">DIARIES FOR EVERY STORIES</h2>
-            <img src="<?= BASE_URL . 'assets/images/underline.png' ?>" alt="" srcset="" class="h-5">
+
+    <div class="my-12 overflow-hidden">
+        <!-- Heading -->
+        <div class="mb-8 flex flex-col items-center gap-y-4">
+            <h2 class="text-2xl md:text-4xl">
+                DIARIES FOR EVERY STORY
+            </h2>
+            <img src="<?= BASE_URL . 'assets/images/underline.png' ?>" alt="" class="h-5">
         </div>
-        <div class="mx-5 flex gap-x-8 gap-y-2 justify-center flex-wrap">
-            <div class="w-48 flex flex-col shadow-sm bg-background">
-                <div class="flex-3/4">
-                    <img class="w-full h-full object-cover" src="<?= BASE_URL . 'assets/images/collections/travel_lover.webp' ?>" alt="">
-                </div>
-                <div class="flex-1/4 px-1 flex flex-col items-center gap-y-3 py-5">
-                    <p class="font-bold">Travel Lover</p>
-                    <p class="text-wrap font-semibold text-[12px] text-center tracking-wider">For those who collect memories, not things.</p>
-                    <a class="flex items-center gap-x-2 text-button_color" href="">Explore <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-move-right-icon lucide-move-right">
-                            <path d="M18 8L22 12L18 16" />
-                            <path d="M2 12H22" />
-                        </svg></a>
+
+        <!-- Carousel wrapper -->
+        <div class="relative z-0 flex justify-center items-center">
+
+            <!-- Previous button -->
+            <button id="category-prev" type="button" aria-label="Previous category" class="absolute left-2 top-1/2 z-10 -translate-y-1/2 flex h-10 w-10 items-center justify-center rounded-full bg-white shadow-lg transition-all duration-200 hover:scale-110 hover:bg-gray-50">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="m15 18-6-6 6-6" />
+                </svg>
+            </button>
+
+
+            <!-- Carousel viewport -->
+            <div id="category-carousel" class="overflow-hidden w-[95%]">
+                <!-- Moving track -->
+                <div id="category-track" class="flex w-max">
+                    <div class="category-set flex shrink-0 gap-8 px-4">
+                        <!-- Card -->
+                        <div class="category-card w-48 shrink-0 overflow-hidden bg-background shadow-sm">
+                            <div class="h-64">
+                                <img class="h-full w-full object-cover" src="<?= BASE_URL . 'assets/images/collections/travel_lover.webp' ?>" alt="Travel Lover">
+                            </div>
+                            <div class="flex flex-col items-center gap-y-3 px-2 py-5">
+                                <p class="font-bold">Travel Lover</p>
+                                <p class="text-center text-[12px] font-semibold tracking-wider">For those who collect memories, not things.</p>
+                                <a class="flex items-center gap-x-2 text-button_color" href="#"> Explore<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M18 8L22 12L18 16" />
+                                        <path d="M2 12H22" />
+                                    </svg></a>
+                            </div>
+                        </div>
+
+
+                        <!-- Card -->
+                        <div class="category-card w-48 shrink-0 overflow-hidden bg-background shadow-sm">
+                            <div class="h-64">
+                                <img class="h-full w-full object-cover" src="<?= BASE_URL . 'assets/images/collections/couple_diary.webp' ?>" alt="Couple Diary">
+                            </div>
+                            <div class="flex flex-col items-center gap-y-3 px-2 py-5">
+                                <p class="font-bold">Couple Diary</p>
+                                <p class="text-center text-[12px] font-semibold tracking-wider">Your love story deserves its own pages.</p>
+                                <a class="flex items-center gap-x-2 text-button_color" href="#"> Explore <span>→</span>
+                                </a>
+                            </div>
+                        </div>
+
+
+                        <!-- Card -->
+                        <div class="category-card w-48 shrink-0 overflow-hidden bg-background shadow-sm">
+                            <div class="h-64">
+                                <img class="h-full w-full object-cover" src="<?= BASE_URL . 'assets/images/collections/student_planner.webp' ?>" alt="Student Planner">
+                            </div>
+                            <div class="flex flex-col items-center gap-y-3 px-2 py-5">
+                                <p class="font-bold">Student Planner</p>
+                                <p class="text-center text-[12px] font-semibold tracking-wider">Plan better, achieve more, build your future.</p>
+                                <a class="flex items-center gap-x-2 text-button_color" href="#"> Explore <span>→</span></a>
+                            </div>
+                        </div>
+
+
+                        <!-- Card -->
+                        <div class="category-card w-48 shrink-0 overflow-hidden bg-background shadow-sm">
+                            <div class="h-64">
+                                <img class="h-full w-full object-cover" src="<?= BASE_URL . 'assets/images/collections/fitness_diary.webp' ?>" alt="Fitness Journey">
+                            </div>
+                            <div class="flex flex-col items-center gap-y-3 px-2 py-5">
+                                <p class="font-bold">Fitness Journey</p>
+                                <p class="text-center text-[12px] font-semibold tracking-wider">Track your progress. Celebrate your strength.</p>
+                                <a class="flex items-center gap-x-2 text-button_color" href="#"> Explore <span>→</span></a>
+                            </div>
+                        </div>
+
+
+                        <!-- Card -->
+                        <div class="category-card w-48 shrink-0 overflow-hidden bg-background shadow-sm">
+                            <div class="h-64">
+                                <img class="h-full w-full object-cover" src="<?= BASE_URL . 'assets/images/collections/pet_lover.webp' ?>" alt="Pet Lover">
+                            </div>
+                            <div class="flex flex-col items-center gap-y-3 px-2 py-5">
+                                <p class="font-bold">Pet Lover</p>
+                                <p class="text-center text-[12px] font-semibold tracking-wider">For the ones who leave paw prints on our hearts.</p>
+                                <a class="flex items-center gap-x-2 text-button_color" href="#"> Explore <span>→</span></a>
+                            </div>
+                        </div>
+
+
+                        <!-- Card -->
+                        <div class="category-card w-48 shrink-0 overflow-hidden bg-background shadow-sm">
+                            <div class="h-64">
+                                <img class="h-full w-full object-cover" src="<?= BASE_URL . 'assets/images/collections/professional_diary.webp' ?>" alt="Professional">
+                            </div>
+                            <div class="flex flex-col items-center gap-y-3 px-2 py-5">
+                                <p class="font-bold">Professional</p>
+                                <p class="text-center text-[12px] font-semibold tracking-wider">Stay productive, set goals, achieve more.</p>
+                                <a class="flex items-center gap-x-2 text-button_color" href="#"> Explore <span>→</span></a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="w-48 flex flex-col shadow-sm bg-background">
-                <div class="flex-3/4">
-                    <img class="w-full h-full object-cover" src="<?= BASE_URL . 'assets/images/collections/couple_diary.webp' ?>" alt="">
-                </div>
-                <div class="flex-1/4 px-1 flex flex-col items-center gap-y-3 py-5">
-                    <p class="font-bold">Couple Diary</p>
-                    <p class="text-wrap font-semibold text-[12px] text-center tracking-wider">Your love story deserves its own pages.</p>
-                    <a class="flex items-center gap-x-2 text-button_color" href="">Explore <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-move-right-icon lucide-move-right">
-                            <path d="M18 8L22 12L18 16" />
-                            <path d="M2 12H22" />
-                        </svg></a>
-                </div>
-            </div>
-            <div class="w-48 flex flex-col shadow-sm bg-background">
-                <div class="flex-3/4">
-                    <img class="w-full h-full object-cover" src="<?= BASE_URL . 'assets/images/collections/student_planner.webp' ?>" alt="">
-                </div>
-                <div class="flex-1/4 px-1 flex flex-col items-center gap-y-3 py-5">
-                    <p class="font-bold">Student Planner</p>
-                    <p class="text-wrap font-semibold text-[12px] text-center tracking-wider">Plan better, achieve more, build your future.</p>
-                    <a class="flex items-center gap-x-2 text-button_color" href="">Explore <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-move-right-icon lucide-move-right">
-                            <path d="M18 8L22 12L18 16" />
-                            <path d="M2 12H22" />
-                        </svg></a>
-                </div>
-            </div>
-            <div class="w-48 flex flex-col shadow-sm bg-background">
-                <div class="flex-3/4">
-                    <img class="w-full h-full object-cover" src="<?= BASE_URL . 'assets/images/collections/fitness_diary.webp' ?>" alt="">
-                </div>
-                <div class="flex-1/4 px-1 flex flex-col items-center gap-y-3 py-5">
-                    <p class="font-bold">Fitness Journey</p>
-                    <p class="text-wrap font-semibold text-[12px] text-center tracking-wider">Track your progress. Celebrate your strength.</p>
-                    <a class="flex items-center gap-x-2 text-button_color" href="">Explore <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-move-right-icon lucide-move-right">
-                            <path d="M18 8L22 12L18 16" />
-                            <path d="M2 12H22" />
-                        </svg></a>
-                </div>
-            </div>
-            <div class="w-48 flex flex-col shadow-sm bg-background">
-                <div class="flex-3/4">
-                    <img class="w-full h-full object-cover" src="<?= BASE_URL . 'assets/images/collections/pet_lover.webp' ?>" alt="">
-                </div>
-                <div class="flex-1/4 px-1 flex flex-col items-center gap-y-3 py-5">
-                    <p class="font-bold">Pet Lover</p>
-                    <p class="text-wrap font-semibold text-[12px] text-center tracking-wider">For the ones who leave paw prints on our hearts.</p>
-                    <a class="flex items-center gap-x-2 text-button_color" href="">Explore <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-move-right-icon lucide-move-right">
-                            <path d="M18 8L22 12L18 16" />
-                            <path d="M2 12H22" />
-                        </svg></a>
-                </div>
-            </div>
-            <div class="w-48 flex flex-col shadow-sm bg-background">
-                <div class="flex-3/4">
-                    <img class="w-full h-full object-cover" src="<?= BASE_URL . 'assets/images/collections/professional_diary.webp' ?>" alt="">
-                </div>
-                <div class="flex-1/4 px-1 flex flex-col items-center gap-y-3 py-5">
-                    <p class="font-bold">Professional</p>
-                    <p class="text-wrap font-semibold text-[12px] text-center tracking-wider">Stay productive, set goals, achieve more.</p>
-                    <a class="flex items-center gap-x-2 text-button_color" href="">Explore <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-move-right-icon lucide-move-right">
-                            <path d="M18 8L22 12L18 16" />
-                            <path d="M2 12H22" />
-                        </svg></a>
-                </div>
-            </div>
+
+            <!-- Next button -->
+            <button id="category-next" type="button" aria-label="Next category" class="absolute right-2 top-1/2 z-10 -translate-y-1/2 flex h-10 w-10 items-center justify-center rounded-full bg-white shadow-lg transition-all duration-200 hover:scale-110 hover:bg-gray-50">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="m9 18 6-6-6-6" />
+                </svg>
+            </button>
+
         </div>
     </div>
 </main>
