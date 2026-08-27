@@ -4,7 +4,14 @@ require_once __DIR__ . '/../src/config/config.php';
 $page_title = 'Contact Us';
 require_once __DIR__ . '/../src/views/components/header.php';
 require_once __DIR__ . '/../src/views/components/navbar.php';
+
+
+if (empty($_SESSION['csrf_token'])) {
+    $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
+}
 ?>
+
+
 <main class="">
 
     <!-- Page heading -->
@@ -16,7 +23,6 @@ require_once __DIR__ . '/../src/views/components/navbar.php';
         </p>
     </div>
 
-    <!-- Contact section -->
     <!-- Contact section -->
     <div class="mx-5 md:mx-20 mb-20">
         <div class="grid grid-cols-1 md:grid-cols-2 shadow-2xl rounded-[2rem] overflow-hidden">
@@ -90,90 +96,76 @@ require_once __DIR__ . '/../src/views/components/navbar.php';
             <!-- Right: contact form -->
             <div class="bg-white p-10 md:p-12 flex flex-col justify-center">
 
-                <?php if (!empty($form_success ?? null)): ?>
-                    <div class="mb-5 rounded-xl bg-green-50 border border-green-200 text-green-700 px-4 py-3 text-sm">
-                        Thanks! Your message has been sent — we'll be in touch soon.
+                <!-- Response banner (populated by AJAX) -->
+                <div id="contact-response" class="hidden mb-5"></div>
+
+                <form id="contact-form" method="POST" action="<?= BASE_URL . 'contact.php' ?>" class="flex flex-col gap-y-5">
+                    <input type="hidden" name="csrf_token" value="<?= htmlspecialchars($_SESSION['csrf_token'], ENT_QUOTES, 'UTF-8') ?>">
+
+                    <!-- Honeypot: hidden from real users, bots tend to fill every input -->
+                    <div class="absolute -left-[9999px] w-px h-px overflow-hidden" aria-hidden="true">
+                        <label for="website">Leave this field empty</label>
+                        <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
                     </div>
-                <?php endif; ?>
-
-                <?php if (!empty($form_errors ?? [])): ?>
-                    <div class="mb-5 rounded-xl bg-red-50 border border-red-200 text-red-700 px-4 py-3 text-sm">
-                        <ul class="list-disc list-inside">
-                            <?php foreach ($form_errors as $error): ?>
-                                <li><?= htmlspecialchars($error) ?></li>
-                            <?php endforeach; ?>
-                        </ul>
-                    </div>
-                <?php endif; ?>
-
-                <form method="POST" action="<?= BASE_URL . 'contact' ?>" class="flex flex-col gap-y-5">
-
                     <div class="flex flex-col md:flex-row gap-5">
                         <div class="flex-1 flex flex-col gap-y-1.5">
                             <label for="name" class="text-sm text-dark_text font-semibold tracking-wide">Name</label>
-                            <input
-                                type="text"
-                                id="name"
-                                name="name"
-                                required
-                                placeholder="Your full name"
-                                value="<?= htmlspecialchars($old['name'] ?? '') ?>"
+                            <input type="text" id="name" name="name" required placeholder="Your full name"
                                 class="bg-secondary/50 border border-transparent rounded-xl px-4 py-3 text-sm placeholder:text-gray-400 focus:outline-none focus:bg-white focus:border-accent focus:ring-4 focus:ring-accent/15 transition-all duration-200">
+                            <span class="field-error hidden text-xs text-red-500"></span>
                         </div>
 
                         <div class="flex-1 flex flex-col gap-y-1.5">
                             <label for="email" class="text-sm text-dark_text font-semibold tracking-wide">Email</label>
-                            <input
-                                type="email"
-                                id="email"
-                                name="email"
-                                required
-                                placeholder="you@example.com"
-                                value="<?= htmlspecialchars($old['email'] ?? '') ?>"
+                            <input type="email" id="email" name="email" required placeholder="you@example.com"
                                 class="bg-secondary/50 border border-transparent rounded-xl px-4 py-3 text-sm placeholder:text-gray-400 focus:outline-none focus:bg-white focus:border-accent focus:ring-4 focus:ring-accent/15 transition-all duration-200">
+                            <span class="field-error hidden text-xs text-red-500"></span>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col md:flex-row gap-5">
+                        <div class="flex-1 flex flex-col gap-y-1.5">
+                            <label for="phone" class="text-sm text-dark_text font-semibold tracking-wide">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" required placeholder="+91 98765 43210"
+                                pattern="^[0-9+\-\s()]{7,15}$"
+                                class="bg-secondary/50 border border-transparent rounded-xl px-4 py-3 text-sm placeholder:text-gray-400 focus:outline-none focus:bg-white focus:border-accent focus:ring-4 focus:ring-accent/15 transition-all duration-200">
+                            <span class="field-error hidden text-xs text-red-500"></span>
+                        </div>
+
+                        <div class="flex-1 flex flex-col gap-y-1.5">
+                            <label for="subject" class="text-sm text-dark_text font-semibold tracking-wide">Subject</label>
+                            <input type="text" id="subject" name="subject" required placeholder="What's this about?"
+                                class="bg-secondary/50 border border-transparent rounded-xl px-4 py-3 text-sm placeholder:text-gray-400 focus:outline-none focus:bg-white focus:border-accent focus:ring-4 focus:ring-accent/15 transition-all duration-200">
+                            <span class="field-error hidden text-xs text-red-500"></span>
                         </div>
                     </div>
 
                     <div class="flex flex-col gap-y-1.5">
-                        <label for="subject" class="text-sm text-dark_text font-semibold tracking-wide">Subject</label>
-                        <input
-                            type="text"
-                            id="subject"
-                            name="subject"
-                            required
-                            placeholder="What's this about?"
-                            value="<?= htmlspecialchars($old['subject'] ?? '') ?>"
-                            class="bg-secondary/50 border border-transparent rounded-xl px-4 py-3 text-sm placeholder:text-gray-400 focus:outline-none focus:bg-white focus:border-accent focus:ring-4 focus:ring-accent/15 transition-all duration-200">
-                    </div>
-
-                    <div class="flex flex-col gap-y-1.5">
                         <label for="message" class="text-sm text-dark_text font-semibold tracking-wide">Message</label>
-                        <textarea
-                            id="message"
-                            name="message"
-                            rows="5"
-                            required
+                        <textarea id="message" name="message" rows="5" required
                             placeholder="Tell us about the story you'd like to capture..."
-                            class="bg-secondary/50 border border-transparent rounded-xl px-4 py-3 text-sm placeholder:text-gray-400 resize-none focus:outline-none focus:bg-white focus:border-accent focus:ring-4 focus:ring-accent/15 transition-all duration-200"><?= htmlspecialchars($old['message'] ?? '') ?></textarea>
+                            class="bg-secondary/50 border border-transparent rounded-xl px-4 py-3 text-sm placeholder:text-gray-400 resize-none focus:outline-none focus:bg-white focus:border-accent focus:ring-4 focus:ring-accent/15 transition-all duration-200"></textarea>
+                        <span class="field-error hidden text-xs text-red-500"></span>
                     </div>
 
-                    <button
-                        type="submit"
-                        class="mt-2 bg-button_color hover:brightness-110 text-white flex items-center justify-center gap-3 px-6 py-3.5 rounded-xl w-max shadow-lg shadow-button_color/30 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200">
-                        Send Message
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <button type="submit" id="contact-submit-btn"
+                        class="mt-2 bg-button_color hover:brightness-110 text-white flex items-center justify-center gap-3 px-6 py-3.5 rounded-xl w-max shadow-lg shadow-button_color/30 hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200 disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:translate-y-0">
+                        <span id="btn-text">Send Message</span>
+                        <svg id="btn-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M18 8L22 12L18 16" />
                             <path d="M2 12H22" />
+                        </svg>
+                        <svg id="btn-spinner" class="hidden animate-spin" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 12a9 9 0 1 1-6.219-8.56" />
                         </svg>
                     </button>
 
                 </form>
             </div>
-
         </div>
     </div>
-
 </main>
+
 <?php
 require_once __DIR__ . '/../src/views/components/footer.php';
 ?>

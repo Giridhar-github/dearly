@@ -120,3 +120,81 @@ function autoScroll() {
 }
 
 autoScroll();
+
+
+// testimonial slider
+document.addEventListener('DOMContentLoaded', function () {
+
+    const track = document.querySelector('#testimonial-track');
+    const prevButton = document.querySelector('#testimonial-prev');
+    const nextButton = document.querySelector('#testimonial-next');
+
+    if (!track || !prevButton || !nextButton) return;
+
+    let position = 0;
+    let isMoving = false;
+    let setWidth = 0;
+    let slideAmount = 0;
+
+    const gap = 28; // matches md:gap-7 (28px)
+
+    function buildClones() {
+        const originalSet = track.querySelector('.testimonial-set');
+        const firstCard = originalSet.querySelector('.testimonial-card');
+        const cardWidth = firstCard.offsetWidth;
+        slideAmount = cardWidth + gap;
+
+        const viewportWidth = track.parentElement.offsetWidth;
+        let totalWidth = originalSet.offsetWidth;
+
+        while (totalWidth < viewportWidth * 2) {
+            const clone = originalSet.cloneNode(true);
+            track.appendChild(clone);
+            totalWidth += originalSet.offsetWidth;
+        }
+
+        if (track.querySelectorAll('.testimonial-set').length < 2) {
+            track.appendChild(originalSet.cloneNode(true));
+        }
+
+        setWidth = originalSet.offsetWidth;
+    }
+
+    buildClones();
+
+    function setPosition() {
+        track.style.transform = `translate3d(${position}px, 0, 0)`;
+    }
+
+    nextButton.addEventListener('click', function () {
+        if (isMoving) return;
+        isMoving = true;
+        position -= slideAmount;
+        track.style.transition = 'transform 500ms cubic-bezier(0.22, 1, 0.36, 1)';
+        setPosition();
+    });
+
+    prevButton.addEventListener('click', function () {
+        if (isMoving) return;
+        isMoving = true;
+        position += slideAmount;
+        track.style.transition = 'transform 500ms cubic-bezier(0.22, 1, 0.36, 1)';
+        setPosition();
+    });
+
+    track.addEventListener('transitionend', function () {
+        isMoving = false;
+        track.style.transition = 'none';
+
+        if (position <= -setWidth * 2) {
+            position += setWidth;
+            setPosition();
+        }
+
+        if (position >= 0) {
+            position -= setWidth;
+            setPosition();
+        }
+    });
+
+});

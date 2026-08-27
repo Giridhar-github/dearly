@@ -41,7 +41,7 @@
                 <a class="w-max hover:text-white hover:translate-x-1 transition-all duration-200" href="">Collections</a>
                 <a class="w-max hover:text-white hover:translate-x-1 transition-all duration-200" href="">How it Works</a>
                 <a class="w-max hover:text-white hover:translate-x-1 transition-all duration-200" href="">About Us</a>
-                <a class="w-max hover:text-white hover:translate-x-1 transition-all duration-200" href="<?= BASE_URL . 'contact' ?>">Contact Us</a>
+                <a class="w-max hover:text-white hover:translate-x-1 transition-all duration-200" href="<?= BASE_URL . 'contact.php' ?>">Contact Us</a>
                 <a class="w-max hover:text-white hover:translate-x-1 transition-all duration-200" href="">FAQs</a>
             </div>
         </div>
@@ -53,7 +53,7 @@
             <div class="flex flex-col gap-y-2.5 text-sm text-gray-300">
                 <a class="w-max hover:text-white hover:translate-x-1 transition-all duration-200" href="">Track Your Orders</a>
                 <a class="w-max hover:text-white hover:translate-x-1 transition-all duration-200" href="">Shipping & Delivery</a>
-                <a class="w-max hover:text-white hover:translate-x-1 transition-all duration-200" href="">Returns & Refunds</a>
+                <!-- <a class="w-max hover:text-white hover:translate-x-1 transition-all duration-200" href="">Returns & Refunds</a> -->
                 <a class="w-max hover:text-white hover:translate-x-1 transition-all duration-200" href="">Terms & Conditions</a>
                 <a class="w-max hover:text-white hover:translate-x-1 transition-all duration-200" href="">Privacy Policy</a>
             </div>
@@ -103,5 +103,4 @@
 </body>
 <script src="<?= BASE_URL . 'assets/scripts/script.js' ?>"></script>
 <script src="<?= BASE_URL . 'assets/scripts/slider.js' ?>"></script>
-
 </html>

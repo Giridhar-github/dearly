@@ -55,47 +55,47 @@
             </div>
             <div class="">
                 <div class="md:flex md:gap-10 hidden md:block">
-                    <a class="py-2" href="">Home</a>
+                    <a class="py-2" href="<?= BASE_URL ?>">Home</a>
                     <a class="py-2" href="">Collections</a>
                     <a class="py-2" href="">How It Works</a>
-                    <a class="py-2" href="">About Us</a>
-                    <a class="py-2" href="<?= BASE_URL . 'contact.php' ?>"">Contact</a>
+                    <a class="py-2" href="<?= BASE_URL . 'about.php' ?>">About Us</a>
+                    <a class="py-2" href="<?= BASE_URL . 'contact.php' ?>">Contact</a>
                 </div>
             </div>
             <div class=" hidden md:block">
-                        <button class="bg-button_color text-white px-3 py-2 rounded-md">Start Your Diary</button>
-                </div>
-                <div class="hidden">
-                    <a href="">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#B38A57" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user-round-icon lucide-user-round">
-                            <circle cx="12" cy="8" r="5" />
-                            <path d="M20 21a8 8 0 0 0-16 0" />
-                        </svg>
-                    </a>
-                </div>
-                <div class="block md:hidden">
-                    <button class="cursor-pointer text-primary navbar_hamburger">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu-icon lucide-menu">
-                            <path d="M4 5h16" />
-                            <path d="M4 12h16" />
-                            <path d="M4 19h16" />
-                        </svg>
-                    </button>
-                    <button class="cursor-pointer text-primary navbar_close hidden">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x-icon lucide-x">
-                            <path d="M18 6 6 18" />
-                            <path d="m6 6 12 12" />
-                        </svg>
-                    </button>
-                </div>
+                <button class="bg-button_color text-white px-3 py-2 rounded-md">Start Your Diary</button>
             </div>
-            <div class="phone_only_menus hidden">
-                <div class="flex flex-col items-center px-10 text-primary">
-                    <a class="py-2 w-full text-end tracking-widest border-b-2 border-gray-200" href="">Home</a>
-                    <a class="py-2 w-full text-end tracking-widest border-b-2 border-gray-200" href="">Collections</a>
-                    <a class="py-2 w-full text-end tracking-widest border-b-2 border-gray-200" href="">How It Works</a>
-                    <a class="py-2 w-full text-end tracking-widest border-b-2 border-gray-200" href="">About Us</a>
-                    <a class="py-2 w-full text-end tracking-widest" href="<?= BASE_URL . 'contact.php' ?>"">Contact</a>
+            <div class="hidden">
+                <a href="">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#B38A57" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user-round-icon lucide-user-round">
+                        <circle cx="12" cy="8" r="5" />
+                        <path d="M20 21a8 8 0 0 0-16 0" />
+                    </svg>
+                </a>
+            </div>
+            <div class="block md:hidden">
+                <button class="cursor-pointer text-primary navbar_hamburger">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu-icon lucide-menu">
+                        <path d="M4 5h16" />
+                        <path d="M4 12h16" />
+                        <path d="M4 19h16" />
+                    </svg>
+                </button>
+                <button class="cursor-pointer text-primary navbar_close hidden">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x-icon lucide-x">
+                        <path d="M18 6 6 18" />
+                        <path d="m6 6 12 12" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div class="phone_only_menus hidden">
+            <div class="flex flex-col items-center px-10 text-primary">
+                <a class="py-2 w-full text-end tracking-widest border-b-2 border-gray-200" href="<?= BASE_URL ?>">Home</a>
+                <a class="py-2 w-full text-end tracking-widest border-b-2 border-gray-200" href="">Collections</a>
+                <a class="py-2 w-full text-end tracking-widest border-b-2 border-gray-200" href="">How It Works</a>
+                <a class="py-2 w-full text-end tracking-widest border-b-2 border-gray-200" href="">About Us</a>
+                <a class="py-2 w-full text-end tracking-widest" href="<?= BASE_URL . 'contact.php' ?>"">Contact</a>
             </div>
         </div>
     </div>

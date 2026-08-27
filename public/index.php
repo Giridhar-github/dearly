@@ -4,6 +4,66 @@ require_once __DIR__ . '/../src/config/config.php';
 $page_title = 'Home';
 require_once __DIR__ . '/../src/views/components/header.php';
 require_once __DIR__ . '/../src/views/components/navbar.php';
+
+$collections = [
+    [
+        'title' => 'Travel Lover',
+        'desc' => 'For those who collect memories, not things.',
+        'cover' => 'travel_lover.webp',
+    ],
+    [
+        'title' => 'Couple Diary',
+        'desc' => 'Your love story deserves its own pages.',
+        'cover' => 'couple_diary.webp',
+    ],
+    [
+        'title' => 'Student Planner',
+        'desc' => 'Plan better, achieve more, build your future.',
+        'cover' => 'student_planner.webp',
+    ],
+    [
+        'title' => 'Fitness Journey',
+        'desc' => 'Track your progress. Celebrate your strength.',
+        'cover' => 'fitness_diary.webp',
+    ],
+    [
+        'title' => 'Pet Lover',
+        'desc' => 'For the ones who leave paw prints on our hearts.',
+        'cover' => 'pet_lover.webp',
+    ],
+    [
+        'title' => 'Professional',
+        'desc' => 'Stay productive, set goals, achieve more.',
+        'cover' => 'professional_diary.webp',
+    ]
+];
+
+$testimonials = [
+    [
+        'author' => 'Ananya S',
+        'cover' => '',
+        'content' => 'The diary was beyond my expectations. Every page felt like it was made just for me.',
+        'rating' => 5,
+        'is_female' => true
+    ],
+    [
+        'author' => 'Rohit M',
+        'cover' => '',
+        'content' => 'Such a unique and thoughtful gift. The team really captured every detail perfectly.',
+        'rating' => 5,
+        'is_female' => false
+    ],
+    [
+        'author' => 'Priya N',
+        'cover' => '',
+        'content' => "Finally a diary that feels like 'me'. I use it every single day. Love it!",
+        'rating' => 5,
+        'is_female' => true
+    ]
+];
+$male_avatar = BASE_URL . 'assets/images/icons/male_avatar.svg';
+$female_avatar = BASE_URL . 'assets/images/icons/female_avatar.svg';
+
 ?>
 <main class="">
     <!-- hero section -->
@@ -104,125 +164,340 @@ require_once __DIR__ . '/../src/views/components/navbar.php';
         </div>
     </div>
     <!-- collections -->
+    <?php if (empty($collections)) { ?>
 
-    <div class="my-12 overflow-hidden">
-        <!-- Heading -->
-        <div class="mb-8 flex flex-col items-center gap-y-4">
-            <h2 class="text-2xl md:text-4xl">
-                DIARIES FOR EVERY STORY
-            </h2>
-            <img src="<?= BASE_URL . 'assets/images/underline.png' ?>" alt="" class="h-5">
-        </div>
+        <div class="my-12 overflow-hidden">
+            <!-- Heading -->
+            <div class="mb-8 flex flex-col items-center gap-y-4">
+                <h2 class="text-2xl md:text-4xl">
+                    DIARIES FOR EVERY STORY
+                </h2>
+                <img src="<?= BASE_URL . 'assets/images/underline.png' ?>" alt="" class="h-5">
+            </div>
 
-        <!-- Carousel wrapper -->
-        <div class="relative z-0 flex justify-center items-center">
+            <!-- Carousel wrapper -->
+            <div class="relative z-0 flex justify-center items-center">
 
-            <!-- Previous button -->
-            <button id="category-prev" type="button" aria-label="Previous category" class="absolute left-2 top-1/2 z-10 -translate-y-1/2 flex h-10 w-10 items-center justify-center rounded-full bg-white shadow-lg transition-all duration-200 hover:scale-110 hover:bg-gray-50">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="m15 18-6-6 6-6" />
-                </svg>
-            </button>
+                <!-- Previous button -->
+                <button id="category-prev" type="button" aria-label="Previous category" class="absolute left-2 top-1/2 z-10 -translate-y-1/2 flex h-10 w-10 items-center justify-center rounded-full bg-white shadow-lg transition-all duration-200 hover:scale-110 hover:bg-gray-50">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="m15 18-6-6 6-6" />
+                    </svg>
+                </button>
 
-
-            <!-- Carousel viewport -->
-            <div id="category-carousel" class="overflow-hidden w-[95%]">
-                <!-- Moving track -->
-                <div id="category-track" class="flex w-max">
-                    <div class="category-set flex shrink-0 gap-8 px-4">
-                        <!-- Card -->
-                        <div class="category-card w-48 shrink-0 overflow-hidden bg-background shadow-sm">
-                            <div class="h-64">
-                                <img class="h-full w-full object-cover" src="<?= BASE_URL . 'assets/images/collections/travel_lover.webp' ?>" alt="Travel Lover">
-                            </div>
-                            <div class="flex flex-col items-center gap-y-3 px-2 py-5">
-                                <p class="font-bold">Travel Lover</p>
-                                <p class="text-center text-[12px] font-semibold tracking-wider">For those who collect memories, not things.</p>
-                                <a class="flex items-center gap-x-2 text-button_color" href="#"> Explore<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="M18 8L22 12L18 16" />
-                                        <path d="M2 12H22" />
-                                    </svg></a>
-                            </div>
-                        </div>
-
-
-                        <!-- Card -->
-                        <div class="category-card w-48 shrink-0 overflow-hidden bg-background shadow-sm">
-                            <div class="h-64">
-                                <img class="h-full w-full object-cover" src="<?= BASE_URL . 'assets/images/collections/couple_diary.webp' ?>" alt="Couple Diary">
-                            </div>
-                            <div class="flex flex-col items-center gap-y-3 px-2 py-5">
-                                <p class="font-bold">Couple Diary</p>
-                                <p class="text-center text-[12px] font-semibold tracking-wider">Your love story deserves its own pages.</p>
-                                <a class="flex items-center gap-x-2 text-button_color" href="#"> Explore <span>→</span>
-                                </a>
-                            </div>
-                        </div>
-
-
-                        <!-- Card -->
-                        <div class="category-card w-48 shrink-0 overflow-hidden bg-background shadow-sm">
-                            <div class="h-64">
-                                <img class="h-full w-full object-cover" src="<?= BASE_URL . 'assets/images/collections/student_planner.webp' ?>" alt="Student Planner">
-                            </div>
-                            <div class="flex flex-col items-center gap-y-3 px-2 py-5">
-                                <p class="font-bold">Student Planner</p>
-                                <p class="text-center text-[12px] font-semibold tracking-wider">Plan better, achieve more, build your future.</p>
-                                <a class="flex items-center gap-x-2 text-button_color" href="#"> Explore <span>→</span></a>
-                            </div>
-                        </div>
-
-
-                        <!-- Card -->
-                        <div class="category-card w-48 shrink-0 overflow-hidden bg-background shadow-sm">
-                            <div class="h-64">
-                                <img class="h-full w-full object-cover" src="<?= BASE_URL . 'assets/images/collections/fitness_diary.webp' ?>" alt="Fitness Journey">
-                            </div>
-                            <div class="flex flex-col items-center gap-y-3 px-2 py-5">
-                                <p class="font-bold">Fitness Journey</p>
-                                <p class="text-center text-[12px] font-semibold tracking-wider">Track your progress. Celebrate your strength.</p>
-                                <a class="flex items-center gap-x-2 text-button_color" href="#"> Explore <span>→</span></a>
-                            </div>
-                        </div>
-
-
-                        <!-- Card -->
-                        <div class="category-card w-48 shrink-0 overflow-hidden bg-background shadow-sm">
-                            <div class="h-64">
-                                <img class="h-full w-full object-cover" src="<?= BASE_URL . 'assets/images/collections/pet_lover.webp' ?>" alt="Pet Lover">
-                            </div>
-                            <div class="flex flex-col items-center gap-y-3 px-2 py-5">
-                                <p class="font-bold">Pet Lover</p>
-                                <p class="text-center text-[12px] font-semibold tracking-wider">For the ones who leave paw prints on our hearts.</p>
-                                <a class="flex items-center gap-x-2 text-button_color" href="#"> Explore <span>→</span></a>
-                            </div>
-                        </div>
-
-
-                        <!-- Card -->
-                        <div class="category-card w-48 shrink-0 overflow-hidden bg-background shadow-sm">
-                            <div class="h-64">
-                                <img class="h-full w-full object-cover" src="<?= BASE_URL . 'assets/images/collections/professional_diary.webp' ?>" alt="Professional">
-                            </div>
-                            <div class="flex flex-col items-center gap-y-3 px-2 py-5">
-                                <p class="font-bold">Professional</p>
-                                <p class="text-center text-[12px] font-semibold tracking-wider">Stay productive, set goals, achieve more.</p>
-                                <a class="flex items-center gap-x-2 text-button_color" href="#"> Explore <span>→</span></a>
-                            </div>
+                <!-- Carousel viewport -->
+                <div id="category-carousel" class="overflow-hidden w-[95%]">
+                    <!-- Moving track -->
+                    <div id="category-track" class="flex w-max">
+                        <div class="category-set flex shrink-0 gap-8 px-4">
+                            <!-- Card -->
+                            <?php foreach ($collections as $each_collection) { ?>
+                                <div class="category-card w-48 shrink-0 overflow-hidden bg-background shadow-sm">
+                                    <div class="h-64">
+                                        <img class="h-full w-full object-cover" src="<?= BASE_URL . 'assets/images/collections/' . $each_collection['cover'] ?>" alt="Travel Lover">
+                                    </div>
+                                    <div class="flex flex-col items-center gap-y-3 px-2 py-5">
+                                        <p class="font-bold"><?= $each_collection['title'] ?></p>
+                                        <p class="text-center text-[12px] font-semibold tracking-wider"><?= $each_collection['desc'] ?></p>
+                                        <a class="flex items-center gap-x-2 text-button_color" href="#"> Explore<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                <path d="M18 8L22 12L18 16" />
+                                                <path d="M2 12H22" />
+                                            </svg></a>
+                                    </div>
+                                </div>
+                            <?php } ?>
                         </div>
                     </div>
                 </div>
+
+                <!-- Next button -->
+                <button id="category-next" type="button" aria-label="Next category" class="absolute right-2 top-1/2 z-10 -translate-y-1/2 flex h-10 w-10 items-center justify-center rounded-full bg-white shadow-lg transition-all duration-200 hover:scale-110 hover:bg-gray-50">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="m9 18 6-6-6-6" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    <?php } ?>
+
+    <!-- How It Works -->
+    <section class="bg-[#fcf7f4] py-12 md:py-16 overflow-hidden">
+        <div class="mx-auto max-w-7xl px-5 lg:px-8">
+
+            <!-- Heading -->
+            <div class="mb-10">
+                <h2 class="font-serif text-2xl font-semibold tracking-wide text-[#292525] md:text-3xl">
+                    HOW IT WORKS <span class="font-normal text-[#b65b68]">♡</span>
+                </h2>
             </div>
 
-            <!-- Next button -->
-            <button id="category-next" type="button" aria-label="Next category" class="absolute right-2 top-1/2 z-10 -translate-y-1/2 flex h-10 w-10 items-center justify-center rounded-full bg-white shadow-lg transition-all duration-200 hover:scale-110 hover:bg-gray-50">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="m9 18 6-6-6-6" />
-                </svg>
-            </button>
+
+            <!-- Main content -->
+            <div class="grid items-center gap-10 lg:grid-cols-[1fr_280px] xl:grid-cols-[1fr_320px]">
+
+
+                <!-- Steps -->
+                <div class="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-0">
+
+
+                    <!-- STEP 1 -->
+                    <div class="relative flex flex-col items-center text-center lg:px-5">
+
+                        <!-- Number + Icon -->
+                        <div class="relative mb-5">
+
+                            <span class="absolute -left-7 top-1/2 flex h-6 w-6 -translate-y-1/2 items-center justify-center rounded-full bg-[#a94754] text-xs font-semibold text-white">
+                                1
+                            </span>
+
+                            <div class="flex h-20 w-20 items-center justify-center rounded-full border-2 border-[#ead6d1] bg-[#fffaf8]">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#a94754" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+                                    <path d="M8 8h.01" />
+                                    <path d="M12 8h.01" />
+                                    <path d="M16 8h.01" />
+                                </svg>
+                            </div>
+
+                        </div>
+
+
+                        <h3 class="mb-3 text-sm font-bold text-[#302b2b] md:text-base">
+                            Share Your Story
+                        </h3>
+
+                        <p class="max-w-[190px] text-xs leading-6 tracking-wide text-gray-500">
+                            Tell us about their interests, memories & preferences.
+                        </p>
+
+
+                        <!-- Arrow -->
+                        <div class="absolute right-[-20px] top-9 hidden w-10 lg:block">
+                            <svg viewBox="0 0 50 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full">
+                                <path d="M2 10C15 5 28 5 43 10" stroke="#dfa1a8" stroke-width="1.5" stroke-dasharray="5 5" />
+                                <path d="M39 6L46 10L39 14" stroke="#dfa1a8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- STEP 2 -->
+                    <div class="relative flex flex-col items-center text-center lg:px-5">
+
+                        <!-- Number + Icon -->
+                        <div class="relative mb-5">
+
+                            <span class="absolute -left-7 top-1/2 flex h-6 w-6 -translate-y-1/2 items-center justify-center rounded-full bg-[#a94754] text-xs font-semibold text-white">
+                                2
+                            </span>
+
+                            <div class="flex h-20 w-20 items-center justify-center rounded-full border-2 border-[#ead6d1] bg-[#fffaf8]">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#a94754" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M12 20h9" />
+                                    <path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z" />
+                                    <path d="m15 5 3 3" />
+                                </svg>
+                            </div>
+
+                        </div>
+
+
+                        <h3 class="mb-3 text-sm font-bold text-[#302b2b] md:text-base">
+                            We Design with Love
+                        </h3>
+
+                        <p class="max-w-[190px] text-xs leading-6 tracking-wide text-gray-500">
+                            Our creative team designs a unique diary just for them.
+                        </p>
+
+
+                        <!-- Arrow -->
+                        <div class="absolute right-[-20px] top-9 hidden w-10 lg:block">
+                            <svg viewBox="0 0 50 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full">
+                                <path d="M2 10C15 5 28 5 43 10" stroke="#dfa1a8" stroke-width="1.5" stroke-dasharray="5 5" />
+                                <path d="M39 6L46 10L39 14" stroke="#dfa1a8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- STEP 3 -->
+                    <div class="relative flex flex-col items-center text-center lg:px-5">
+
+                        <!-- Number + Icon -->
+                        <div class="relative mb-5">
+
+                            <span class="absolute -left-7 top-1/2 flex h-6 w-6 -translate-y-1/2 items-center justify-center rounded-full bg-[#a94754] text-xs font-semibold text-white">
+                                3
+                            </span>
+
+                            <div class="flex h-20 w-20 items-center justify-center rounded-full border-2 border-[#ead6d1] bg-[#fffaf8]">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#a94754" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z" />
+                                    <circle cx="12" cy="12" r="3" />
+                                </svg>
+                            </div>
+
+                        </div>
+
+
+                        <h3 class="mb-3 text-sm font-bold text-[#302b2b] md:text-base">
+                            Preview & Approve
+                        </h3>
+
+                        <p class="max-w-[190px] text-xs leading-6 tracking-wide text-gray-500">
+                            We show you the design. You review & approve it.
+                        </p>
+
+                        <!-- Arrow -->
+                        <div class="absolute right-[-20px] top-9 hidden w-10 lg:block">
+                            <svg viewBox="0 0 50 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full">
+                                <path d="M2 10C15 5 28 5 43 10" stroke="#dfa1a8" stroke-width="1.5" stroke-dasharray="5 5" />
+                                <path d="M39 6L46 10L39 14" stroke="#dfa1a8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- STEP 4 -->
+                    <div class="relative flex flex-col items-center text-center lg:px-5">
+
+                        <!-- Number + Icon -->
+                        <div class="relative mb-5">
+
+                            <span class="absolute -left-7 top-1/2 flex h-6 w-6 -translate-y-1/2 items-center justify-center rounded-full bg-[#a94754] text-xs font-semibold text-white">
+                                4
+                            </span>
+
+                            <div class="flex h-20 w-20 items-center justify-center rounded-full border-2 border-[#ead6d1] bg-[#fffaf8]">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#a94754" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect width="18" height="14" x="3" y="8" rx="2" />
+                                    <path d="M12 8V3" />
+                                    <path d="m9 3 3-3 3 3" />
+                                    <path d="M3 12h18" />
+                                </svg>
+                            </div>
+
+                        </div>
+
+
+                        <h3 class="mb-3 text-sm font-bold text-[#302b2b] md:text-base">
+                            Handcrafted & Delivered
+                        </h3>
+
+                        <p class="max-w-[190px] text-xs leading-6 tracking-wide text-gray-500">
+                            We craft it with care and deliver it to your doorstep.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Image -->
+                <div class="hidden lg:block">
+                    <div class="relative mx-auto h-[300px] w-[250px] rotate-[-4deg]">
+
+                        <div class="absolute inset-0 overflow-hidden bg-white p-3 shadow-xl">
+                            <img src="<?= BASE_URL . 'assets/images/how_it_works.webp' ?>" alt="Our handcrafted diary" class="h-full w-full object-cover">
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
 
         </div>
-    </div>
+    </section>
+
+    <!-- testimonials -->
+    <?php if (!empty($testimonials)) { ?>
+        <div class="my-16 md:my-24 mx-5 md:mx-10">
+            <div class="relative rounded-[2rem] overflow-hidden bg-gradient-to-br from-[#fdf1f0] via-[#fdf6f0] to-[#fdf1f0] px-6 md:px-10 py-14 md:py-16">
+
+                <!-- decorative soft blobs -->
+                <div class="absolute -top-20 -left-20 w-72 h-72 rounded-full bg-button_color/5 blur-3xl pointer-events-none"></div>
+                <div class="absolute -bottom-24 -right-16 w-80 h-80 rounded-full bg-accent/10 blur-3xl pointer-events-none"></div>
+
+                <div class="relative flex items-center gap-4 md:gap-8">
+
+                    <!-- Previous button -->
+                    <button id="testimonial-prev" type="button" aria-label="Previous testimonial"
+                        class="hidden md:flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-white shadow-lg transition-all duration-200 hover:scale-110 hover:bg-gray-50">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="m15 18-6-6 6-6" />
+                        </svg>
+                    </button>
+                    <!-- Left: heading -->
+                    <div class="shrink-0 w-full md:w-64 lg:w-72 flex flex-col gap-y-3 mb-6 md:mb-0">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 24 24" fill="rgb(129 47 61)" opacity="0.5">
+                            <path d="M7.17 6A5.17 5.17 0 0 0 2 11.17c0 2.62 1.9 4.7 4.34 5.1.2 2-1.14 3.4-1.14 3.4 2.9-.1 5.3-2.3 5.3-6.5V11.2A5.17 5.17 0 0 0 7.17 6Zm10 0A5.17 5.17 0 0 0 12 11.17c0 2.62 1.9 4.7 4.34 5.1.2 2-1.14 3.4-1.14 3.4 2.9-.1 5.3-2.3 5.3-6.5V11.2A5.17 5.17 0 0 0 17.17 6Z" />
+                        </svg>
+                        <h2 class="text-3xl md:text-4xl font-serif text-dark_text leading-snug">
+                            More than a diary.<br>
+                            A lifetime of memories.
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="rgb(129 47 61)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block align-middle ml-1 -translate-y-1">
+                                <path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5" />
+                            </svg>
+                        </h2>
+                    </div>
+                    <!-- Right: testimonial carousel -->
+                    <div id="testimonial-carousel" class="overflow-hidden flex-1">
+                        <div id="testimonial-track" class="flex w-max">
+                            <div class="testimonial-set flex shrink-0 gap-6 md:gap-7">
+                                <?php foreach ($testimonials as $each_testimonial) { ?>
+                                    <!-- Card 1 -->
+                                    <div class="testimonial-card w-72 md:w-80 shrink-0 bg-white rounded-2xl shadow-md px-6 py-7 flex flex-col gap-y-4">
+                                        <div class="flex items-center justify-between">
+                                            <span class="flex h-9 w-9 items-center justify-center rounded-full bg-secondary text-button_color">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                    <path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5" />
+                                                </svg>
+                                            </span>
+                                            <div class="flex gap-0.5 text-amber-400">
+                                                <?php for ($i = 0; $i < $each_testimonial['rating']; $i++): ?>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                                                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z" />
+                                                    </svg>
+                                                <?php endfor; ?>
+                                            </div>
+                                        </div>
+                                        <p class="text-sm text-gray-600 tracking-wide leading-relaxed text-center">
+                                            "<?= $each_testimonial['content'] ?>"
+                                        </p>
+                                        <div class="flex items-center justify-center gap-x-3 mt-1">
+                                            <?php if ($each_testimonial['cover'] != '') { ?>
+                                                <img class="h-9 w-9 rounded-full object-cover" src="<?= BASE_URL . 'assets/images/testimonials/ananya.webp' ?>" alt="<?= $each_testimonial['author'] ?>">
+                                            <?php } else { ?>
+                                                <img class="h-9 w-9 rounded-full object-cover" src="<?= $each_testimonial['is_female'] ? $female_avatar : $male_avatar ?>" alt="<?= $each_testimonial['author'] ?>">
+                                            <?php } ?>
+                                            <p class="text-sm font-semibold text-dark_text">— <?= $each_testimonial['author'] ?></p>
+                                        </div>
+                                    </div>
+                                <?php } ?>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Next button -->
+                    <button id="testimonial-next" type="button" aria-label="Next testimonial"
+                        class="hidden md:flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-white shadow-lg transition-all duration-200 hover:scale-110 hover:bg-gray-50">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="m9 18 6-6-6-6" />
+                        </svg>
+                    </button>
+
+                </div>
+            </div>
+        </div>
+    <?php } ?>
+
 </main>
 <?php
 require_once __DIR__ . '/../src/views/components/footer.php';
