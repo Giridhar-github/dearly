@@ -21,3 +21,97 @@
         }
     }
 }
+
+/* ------------------------------------
+   Scroll reveal states
+   ------------------------------------ */
+[data-reveal] {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 700ms cubic-bezier(0.22, 1, 0.36, 1),
+        transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: opacity, transform;
+}
+
+[data-reveal].is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+[data-reveal="fade"] {
+    transform: none;
+}
+
+[data-reveal="zoom"] {
+    transform: scale(0.92);
+}
+
+[data-reveal="zoom"].is-visible {
+    transform: scale(1);
+}
+
+[data-reveal="left"] {
+    transform: translateX(-32px);
+}
+
+[data-reveal="left"].is-visible {
+    transform: translateX(0);
+}
+
+[data-reveal="right"] {
+    transform: translateX(32px);
+}
+
+[data-reveal="right"].is-visible {
+    transform: translateX(0);
+}
+
+/* Stagger children of a group (e.g. the 4 "How It Works" steps, testimonial cards) */
+[data-reveal-group]>[data-reveal-item] {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 600ms cubic-bezier(0.22, 1, 0.36, 1),
+        transform 600ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+[data-reveal-group].is-visible>[data-reveal-item] {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+[data-reveal-group].is-visible>[data-reveal-item]:nth-child(1) {
+    transition-delay: 0ms;
+}
+
+[data-reveal-group].is-visible>[data-reveal-item]:nth-child(2) {
+    transition-delay: 120ms;
+}
+
+[data-reveal-group].is-visible>[data-reveal-item]:nth-child(3) {
+    transition-delay: 240ms;
+}
+
+[data-reveal-group].is-visible>[data-reveal-item]:nth-child(4) {
+    transition-delay: 360ms;
+}
+
+/* Parallax hero */
+.parallax-hero {
+    background-position: center 0%;
+    will-change: background-position;
+}
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+
+    [data-reveal],
+    [data-reveal-group]>[data-reveal-item] {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+    }
+
+    .parallax-hero {
+        background-attachment: initial !important;
+    }
+}

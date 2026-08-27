@@ -14,7 +14,9 @@
         <!-- Brand column -->
         <div class="flex-[1.3] text-wrap">
             <div class="flex justify-center md:justify-start">
-                <img class="h-16 w-auto" src="<?= BASE_URL . 'assets/images/logo_white.png' ?>" alt="" srcset="">
+                <a href="<?= BASE_URL ?>">
+                    <img class="h-16 w-auto" src="<?= BASE_URL . 'assets/images/logo_white.png' ?>" alt="" srcset="">
+                </a>
             </div>
             <p class="text-wrap px-7 md:px-0 text-center md:text-left text-sm text-gray-300 leading-relaxed mt-3 max-w-xs mx-auto md:mx-0">
                 We turn memories, dreams and passions into personalized diaries that inspire every day.
@@ -26,9 +28,9 @@
                 <a class="flex h-10 w-10 items-center justify-center border border-white/30 rounded-full hover:bg-accent hover:border-accent hover:-translate-y-0.5 transition-all duration-200" href="">
                     <img class="h-4 invert w-auto" src="<?= BASE_URL . 'assets/images/icons/pinterest.svg' ?>" alt="">
                 </a>
-                <a class="flex h-10 w-10 items-center justify-center border border-white/30 rounded-full hover:bg-accent hover:border-accent hover:-translate-y-0.5 transition-all duration-200" href="">
+                <!-- <a class="flex h-10 w-10 items-center justify-center border border-white/30 rounded-full hover:bg-accent hover:border-accent hover:-translate-y-0.5 transition-all duration-200" href="">
                     <img class="h-4 invert w-auto" src="<?= BASE_URL . 'assets/images/icons/fb.svg' ?>" alt="">
-                </a>
+                </a> -->
             </div>
         </div>
 
@@ -37,10 +39,10 @@
             <h6 class="font-bold tracking-wide text-accent uppercase text-xs mb-1">Quick Links</h6>
             <div class="h-[2px] w-8 bg-accent/50 rounded-full mb-4"></div>
             <div class="flex flex-col gap-y-2.5 text-sm text-gray-300">
-                <a class="w-max hover:text-white hover:translate-x-1 transition-all duration-200" href="">Shop All</a>
-                <a class="w-max hover:text-white hover:translate-x-1 transition-all duration-200" href="">Collections</a>
-                <a class="w-max hover:text-white hover:translate-x-1 transition-all duration-200" href="">How it Works</a>
-                <a class="w-max hover:text-white hover:translate-x-1 transition-all duration-200" href="">About Us</a>
+                <a class="w-max hover:text-white hover:translate-x-1 transition-all duration-200" href="#collections">Shop All</a>
+                <a class="w-max hover:text-white hover:translate-x-1 transition-all duration-200" href="#collections">Collections</a>
+                <a class="w-max hover:text-white hover:translate-x-1 transition-all duration-200" href="#howItWorks">How it Works</a>
+                <a class="w-max hover:text-white hover:translate-x-1 transition-all duration-200" href="<?= BASE_URL . 'about.php' ?>">About Us</a>
                 <a class="w-max hover:text-white hover:translate-x-1 transition-all duration-200" href="<?= BASE_URL . 'contact.php' ?>">Contact Us</a>
                 <a class="w-max hover:text-white hover:translate-x-1 transition-all duration-200" href="">FAQs</a>
             </div>
@@ -103,4 +105,6 @@
 </body>
 <script src="<?= BASE_URL . 'assets/scripts/script.js' ?>"></script>
 <script src="<?= BASE_URL . 'assets/scripts/slider.js' ?>"></script>
+<script src="<?= BASE_URL . 'assets/scripts/scroll-effects.js' ?>"></script>
+
 </html>

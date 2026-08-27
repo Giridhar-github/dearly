@@ -87,9 +87,9 @@ if (empty($_SESSION['csrf_token'])) {
                     <a class="flex h-10 w-10 items-center justify-center border border-white/40 rounded-full hover:bg-accent hover:border-accent transition-colors duration-200" href="">
                         <img class="h-4 invert w-auto" src="<?= BASE_URL . 'assets/images/icons/pinterest.svg' ?>" alt="">
                     </a>
-                    <a class="flex h-10 w-10 items-center justify-center border border-white/40 rounded-full hover:bg-accent hover:border-accent transition-colors duration-200" href="">
+                    <!-- <a class="flex h-10 w-10 items-center justify-center border border-white/40 rounded-full hover:bg-accent hover:border-accent transition-colors duration-200" href="">
                         <img class="h-4 invert w-auto" src="<?= BASE_URL . 'assets/images/icons/fb.svg' ?>" alt="">
-                    </a>
+                    </a> -->
                 </div>
             </div>
 

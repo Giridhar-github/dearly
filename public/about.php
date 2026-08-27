@@ -156,7 +156,7 @@ require_once __DIR__ . '/../src/views/components/navbar.php';
             <p class="relative text-gray-200 tracking-wide max-w-md">
                 Let's design a diary or planner that's made entirely for you.
             </p>
-            <a href="<?= BASE_URL . 'contact' ?>" class="relative bg-button_color text-white flex items-center gap-3 px-6 py-3 rounded-md mt-2 hover:brightness-110 transition-all duration-200">
+            <a href="<?= BASE_URL . 'contact.php' ?>" class="relative bg-button_color text-white flex items-center gap-3 px-6 py-3 rounded-md mt-2 hover:brightness-110 transition-all duration-200">
                 Tell Us Your Story
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M18 8L22 12L18 16" />
