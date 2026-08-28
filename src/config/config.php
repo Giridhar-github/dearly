@@ -62,7 +62,6 @@ define('SMTP_FROM_EMAIL', env_optional('SMTP_FROM_EMAIL'));
 define('SMTP_FROM_NAME', env_optional('SMTP_FROM_NAME', 'Dearly'));
 define('CONTACT_RECEIVING_EMAIL', env_optional('CONTACT_RECEIVING_EMAIL'));
 
-define('MAIL_IS_CONFIGURED', SMTP_HOST !== '' && SMTP_USERNAME !== '' && SMTP_PASSWORD !== '' && CONTACT_RECEIVING_EMAIL !== '');
 define(
     'MAIL_IS_CONFIGURED',
     SMTP_HOST !== '' && SMTP_USERNAME !== '' && SMTP_PASSWORD !== '' && SMTP_FROM_EMAIL !== '' && CONTACT_RECEIVING_EMAIL !== ''
