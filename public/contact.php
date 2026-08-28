@@ -99,13 +99,13 @@ if (empty($_SESSION['csrf_token'])) {
                 <!-- Response banner (populated by AJAX) -->
                 <div id="contact-response" class="hidden mb-5"></div>
 
-                <form id="contact-form" method="POST" action="<?= BASE_URL . 'contact.php' ?>" class="flex flex-col gap-y-5">
+                <form id="contact-form" method="POST" action="<?= BASE_URL . 'contact-form.php' ?>" class="flex flex-col gap-y-5">
                     <input type="hidden" name="csrf_token" value="<?= htmlspecialchars($_SESSION['csrf_token'], ENT_QUOTES, 'UTF-8') ?>">
 
                     <!-- Honeypot: hidden from real users, bots tend to fill every input -->
-                    <div class="absolute -left-[9999px] w-px h-px overflow-hidden" aria-hidden="true">
-                        <label for="website">Leave this field empty</label>
-                        <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+                    <div class="absolute -left-[9999px] top-0 h-0 w-0 overflow-hidden opacity-0" aria-hidden="true" style="pointer-events: none;">
+                        <label for="hp_field">Leave this field empty</label>
+                        <input type="text" id="hp_field" name="hp_field" tabindex="-1" autocomplete="off" aria-hidden="true">
                     </div>
                     <div class="flex flex-col md:flex-row gap-5">
                         <div class="flex-1 flex flex-col gap-y-1.5">

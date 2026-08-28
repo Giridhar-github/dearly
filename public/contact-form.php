@@ -201,6 +201,11 @@ if ($message === '') {
     $errors['message'] = 'Message contains invalid characters.';
 }
 
+if (!empty($_POST['hp_field'])) {
+    error_log('Honeypot triggered from IP: ' . ($_SERVER['REMOTE_ADDR'] ?? 'unknown'));
+    echo json_encode(['success' => true, 'message' => 'Thanks! Your message has been sent.']);
+    exit;
+}
 // ------------------------------------
 // 9. Reject header-injection attempts explicitly (defense in depth on top of PHPMailer's own escaping)
 // ------------------------------------
@@ -241,19 +246,24 @@ if (!empty($errors)) {
 // 11. Send email via PHPMailer + SMTP
 // ------------------------------------
 
+if (!MAIL_IS_CONFIGURED) {
+    error_log('Contact form submitted but SMTP is not configured yet.');
+    fail(503, 'Our contact form is being set up right now — please reach out to us directly at ' . EMAIL . ' in the meantime.');
+}
+
 $mail = new PHPMailer(true);
 
 try {
     $mail->isSMTP();
-    $mail->Host       = $_ENV['SMTP_HOST'];
+    $mail->Host       = SMTP_HOST;
     $mail->SMTPAuth   = true;
-    $mail->Username   = $_ENV['SMTP_USERNAME'];
-    $mail->Password   = $_ENV['SMTP_PASSWORD'];
+    $mail->Username   = SMTP_USERNAME;
+    $mail->Password   = SMTP_PASSWORD;
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-    $mail->Port       = (int) $_ENV['SMTP_PORT'];
+    $mail->Port       = (int) SMTP_PORT;
 
-    $mail->setFrom($_ENV['SMTP_FROM_EMAIL'], $_ENV['SMTP_FROM_NAME']);
-    $mail->addAddress($_ENV['CONTACT_RECEIVING_EMAIL']);
+    $mail->setFrom(SMTP_FROM_EMAIL, SMTP_FROM_NAME);
+    $mail->addAddress(CONTACT_RECEIVING_EMAIL);
     $mail->addReplyTo($email, $name);
 
     $mail->isHTML(true);
