@@ -164,6 +164,7 @@ $female_avatar = BASE_URL . 'assets/images/icons/female_avatar.svg';
             </div>
         </div>
     </div>
+
     <!-- collections -->
     <?php if (!empty($collections)) { ?>
 
@@ -222,8 +223,17 @@ $female_avatar = BASE_URL . 'assets/images/icons/female_avatar.svg';
     <?php } ?>
 
     <!-- How It Works -->
-    <section class="bg-[#fcf7f4] py-12 md:py-16 overflow-hidden" id="howItWorks">
-        <div class="mx-auto max-w-7xl px-5 lg:px-8">
+    <section class="relative py-12 md:py-16 overflow-hidden how-it-works-bg" data-reveal>
+
+        <!-- soft ambient light pools -->
+        <div class="absolute -top-24 -left-24 w-96 h-96 rounded-full bg-button_color/[0.06] blur-3xl pointer-events-none"></div>
+        <div class="absolute top-1/3 -right-32 w-[28rem] h-[28rem] rounded-full bg-accent/[0.10] blur-3xl pointer-events-none"></div>
+        <div class="absolute bottom-0 left-1/4 w-72 h-72 rounded-full bg-light_accent/[0.25] blur-3xl pointer-events-none"></div>
+
+        <!-- subtle heart-doodle texture, tied to your brand -->
+        <div class="absolute inset-0 opacity-[0.04] pointer-events-none how-it-works-doodles"></div>
+
+        <div class="relative mx-auto max-w-7xl px-5 lg:px-8">
 
             <!-- Heading -->
             <div class="mb-10" data-reveal>
@@ -270,7 +280,6 @@ $female_avatar = BASE_URL . 'assets/images/icons/female_avatar.svg';
                         </div>
 
                     </div>
-
                     <!-- STEP 2 -->
                     <div class="relative flex flex-col items-center text-center lg:px-5" data-reveal-item>
                         <!-- Number + Icon -->
@@ -374,7 +383,7 @@ $female_avatar = BASE_URL . 'assets/images/icons/female_avatar.svg';
                 <div class="absolute -top-20 -left-20 w-72 h-72 rounded-full bg-button_color/5 blur-3xl pointer-events-none"></div>
                 <div class="absolute -bottom-24 -right-16 w-80 h-80 rounded-full bg-accent/10 blur-3xl pointer-events-none"></div>
 
-                <div class="relative flex items-center gap-4 md:gap-8">
+                <div class="relative flex flex-col md:flex-row items-center gap-4 md:gap-8">
 
                     <!-- Previous button -->
                     <button id="testimonial-prev" type="button" aria-label="Previous testimonial"
@@ -397,9 +406,9 @@ $female_avatar = BASE_URL . 'assets/images/icons/female_avatar.svg';
                         </h2>
                     </div>
                     <!-- Right: testimonial carousel -->
-                    <div id="testimonial-carousel" class="overflow-hidden flex-1">
+                    <div id="testimonial-carousel" class="overflow-x-auto md:overflow-hidden w-full md:flex-1 snap-x snap-mandatory md:snap-none scrollbar-hide">
                         <div id="testimonial-track" class="flex w-max">
-                            <div class="testimonial-set flex shrink-0 gap-6 md:gap-7">
+                            <div class="testimonial-set flex shrink-0 gap-6 md:gap-7 me-7">
                                 <?php foreach ($testimonials as $each_testimonial) { ?>
                                     <!-- Card 1 -->
                                     <div class="testimonial-card w-72 md:w-80 shrink-0 bg-white rounded-2xl shadow-md px-6 py-7 flex flex-col gap-y-4">

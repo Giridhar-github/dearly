@@ -65,3 +65,36 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
 });
+
+// ------------------------------------
+// How It Works — ambient blob drift
+// ------------------------------------
+
+const howItWorksSection = document.querySelector('.how-it-works-bg');
+
+if (howItWorksSection && !prefersReducedMotion) {
+
+    const blobs = howItWorksSection.querySelectorAll(':scope > div.absolute.blur-3xl');
+    let ticking2 = false;
+
+    function updateBlobDrift() {
+        const rect = howItWorksSection.getBoundingClientRect();
+        if (rect.bottom > 0 && rect.top < window.innerHeight) {
+            const progress = (window.innerHeight - rect.top) / (window.innerHeight + rect.height);
+            blobs.forEach(function (blob, i) {
+                const factor = (i + 1) * 12; // each blob drifts a different amount
+                blob.style.transform = `translateY(${progress * factor}px)`;
+            });
+        }
+        ticking2 = false;
+    }
+
+    window.addEventListener('scroll', function () {
+        if (!ticking2) {
+            window.requestAnimationFrame(updateBlobDrift);
+            ticking2 = true;
+        }
+    }, { passive: true });
+
+    updateBlobDrift();
+}

@@ -115,3 +115,25 @@
         background-attachment: initial !important;
     }
 }
+
+/* ------------------------------------
+   How It Works — atmospheric background
+   ------------------------------------ */
+.how-it-works-bg {
+    background: linear-gradient(160deg, #fdf6f2 0%, #fcf1ec 45%, #fdf7f3 100%);
+    background-attachment: fixed;
+    /* creates a subtle parallax-like drift as you scroll past it */
+}
+
+@media (max-width: 768px) {
+    .how-it-works-bg {
+        background-attachment: scroll;
+        /* fixed backgrounds can jank on mobile Safari */
+    }
+}
+
+.how-it-works-doodles {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cpath d='M30 20a10 10 0 0 1 18-6 10 10 0 0 1 18 6c0 8-9 14-18 22-9-8-18-14-18-22z' fill='none' stroke='%23812f3d' stroke-width='2'/%3E%3Cpath d='M85 70a7 7 0 0 1 12.6-4 7 7 0 0 1 12.6 4c0 5.5-6.3 9.5-12.6 15-6.3-5.5-12.6-9.5-12.6-15z' fill='none' stroke='%23812f3d' stroke-width='1.5'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-size: 120px 120px;
+}

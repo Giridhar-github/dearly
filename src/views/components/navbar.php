@@ -58,9 +58,9 @@
             <div class="">
                 <div class="md:flex md:gap-10 hidden md:block">
                     <a class="py-2" href="<?= BASE_URL ?>">Home</a>
+                    <a class="py-2" href="<?= BASE_URL . 'about.php' ?>">About Us</a>
                     <a class="py-2" href="<?= BASE_URL . 'collections.php' ?>">Collections</a>
                     <a class="py-2" href="#howItWorks">How It Works</a>
-                    <a class="py-2" href="<?= BASE_URL . 'about.php' ?>">About Us</a>
                     <a class="py-2" href="<?= BASE_URL . 'contact.php' ?>">Contact</a>
                 </div>
             </div>
@@ -94,9 +94,9 @@
         <div class="phone_only_menus hidden">
             <div class="flex flex-col items-center px-10 text-primary">
                 <a class="py-2 w-full text-end tracking-widest border-b-2 border-gray-200" href="<?= BASE_URL ?>">Home</a>
+                <a class="py-2 w-full text-end tracking-widest border-b-2 border-gray-200" href="<?= BASE_URL . 'about.php' ?>">About Us</a>
                 <a class="py-2 w-full text-end tracking-widest border-b-2 border-gray-200" href="<?= BASE_URL . 'collections.php' ?>">Collections</a>
                 <a class="py-2 w-full text-end tracking-widest border-b-2 border-gray-200" href="#howItWorks">How It Works</a>
-                <a class="py-2 w-full text-end tracking-widest border-b-2 border-gray-200" href="<?= BASE_URL . 'about.php' ?>">About Us</a>
                 <a class="py-2 w-full text-end tracking-widest" href="<?= BASE_URL . 'contact.php' ?>">Contact</a>
             </div>
         </div>

@@ -53,7 +53,7 @@
             <h6 class="font-bold tracking-wide text-accent uppercase text-xs mb-1">Help & Support</h6>
             <div class="h-[2px] w-8 bg-accent/50 rounded-full mb-4"></div>
             <div class="flex flex-col gap-y-2.5 text-sm text-gray-300">
-                <a class="w-max hover:text-white hover:translate-x-1 transition-all duration-200" href="">Track Your Orders</a>
+                <!-- <a class="w-max hover:text-white hover:translate-x-1 transition-all duration-200" href="">Track Your Orders</a> -->
                 <a class="w-max hover:text-white hover:translate-x-1 transition-all duration-200" href="">Shipping & Delivery</a>
                 <!-- <a class="w-max hover:text-white hover:translate-x-1 transition-all duration-200" href="">Returns & Refunds</a> -->
                 <a class="w-max hover:text-white hover:translate-x-1 transition-all duration-200" href="">Terms & Conditions</a>
