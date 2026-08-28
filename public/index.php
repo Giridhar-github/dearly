@@ -200,7 +200,7 @@ $female_avatar = BASE_URL . 'assets/images/icons/female_avatar.svg';
                                     <div class="flex flex-col items-center gap-y-3 px-2 py-5">
                                         <p class="font-bold"><?= $each_collection['title'] ?></p>
                                         <p class="text-center text-[12px] font-semibold tracking-wider"><?= $each_collection['desc'] ?></p>
-                                        <a class="flex items-center gap-x-2 text-button_color" href="#"> Explore<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <a class="flex items-center gap-x-2 text-button_color" href="<?= BASE_URL . 'collections.php' ?>"> Explore<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                                 <path d="M18 8L22 12L18 16" />
                                                 <path d="M2 12H22" />
                                             </svg></a>

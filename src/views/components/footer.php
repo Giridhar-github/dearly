@@ -40,7 +40,7 @@
             <div class="h-[2px] w-8 bg-accent/50 rounded-full mb-4"></div>
             <div class="flex flex-col gap-y-2.5 text-sm text-gray-300">
                 <a class="w-max hover:text-white hover:translate-x-1 transition-all duration-200" href="#collections">Shop All</a>
-                <a class="w-max hover:text-white hover:translate-x-1 transition-all duration-200" href="#collections">Collections</a>
+                <a class="w-max hover:text-white hover:translate-x-1 transition-all duration-200" href="<?= BASE_URL . 'collections.php' ?>">Collections</a>
                 <a class="w-max hover:text-white hover:translate-x-1 transition-all duration-200" href="#howItWorks">How it Works</a>
                 <a class="w-max hover:text-white hover:translate-x-1 transition-all duration-200" href="<?= BASE_URL . 'about.php' ?>">About Us</a>
                 <a class="w-max hover:text-white hover:translate-x-1 transition-all duration-200" href="<?= BASE_URL . 'contact.php' ?>">Contact Us</a>
